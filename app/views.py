@@ -30,13 +30,13 @@ def create_feature_vector(request):
 def index(request):
     images = models.Image.objects.all().order_by('-image')[:3]
 
-    return render(request, "myapp/index.html", 
+    return render(request, "app/index.html", 
                   {
                     'images' : images
                   })
 def list_images(request):
     all_images = models.Image.objects.all().order_by('-image')
-    return render(request, 'myapp/all.html',
+    return render(request, 'app/all.html',
                   {
                       'all_images': all_images
                   })
@@ -46,13 +46,13 @@ def image_detail(request, id):
     try:
       selected_image = models.Image.objects.get(id=id)
     
-      return render(request, "myapp/detail.html",{
+      return render(request, "app/detail.html",{
 
           'Image_found' : True,
           'image' : selected_image,
       })
     except Exception as exc:
-       return render(request, "myapp/detail.html",{
+       return render(request, "app/detail.html",{
           'Image_found' : False,
        })
 
@@ -90,11 +90,11 @@ def search_images(request):
                  'similar_images': similar_images,
                  'form':form
             }
-            response = render(request,'myapp/search.html',context)
+            response = render(request,'app/search.html',context)
             return response
 
     else:
         form = UploadImageForm()
-    response = render(request, 'myapp/search.html', {'form': form})
+    response = render(request, 'app/search.html', {'form': form})
     return response
 
