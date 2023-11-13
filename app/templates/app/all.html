@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All images</title>
+    <link rel="stylesheet" href="{% static 'myapp/styles/base.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/styles/index.css' %}">
+</head>
+
+<body id="body">
+    <header id="main-navigation">
+        <p> 
+           <a href="{% url 'index' %}">Starting Page</a>
+        </p>
+        <nav>
+            <a href="">All posts</a>
+        </nav>
+      </header>
+
+      <section id="latest-post">
+        <h2>searching image</h2>
+        <ul>
+           {% for image_item in all_posts%}
+             <li>
+                <article class="post">
+                 <a href="{% url "detail_image" id=image_item.id %}">
+                  <img src="{{image_item.image.url}}" alt="{{image_item.title}}">
+                    <div class="post__content">
+                      <h3>{{image_item.title}}</h3>                           
+                      <h3>{{image_item.discrpition}}</h3>
+                    </div>
+                 </a>
+               </article>
+              </li>
+            {% endfor %}
+        </ul>
+    </section>
+</body>
+</html>
