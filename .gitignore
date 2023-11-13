@@ -1,6 +1,7 @@
 
 
-
+# Mine 
+model.pt
 
 ### Django ###
 *.log
