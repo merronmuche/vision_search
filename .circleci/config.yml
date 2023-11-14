@@ -1,11 +1,14 @@
-version: 2 # CircleCI version
+version: 2.1
+
 jobs:
   build:
-    machine:
-      image: ubuntu-2022
-    working_directory: ~/vision_search # Default working directory, 
+    docker:
+      - image: circleci/python:3.10
+    working_directory: ~/repo
     steps:
       - checkout
+      - run: echo 'working directory is, '
+      - run: pwd
       - run: pip install -r requirements.txt
       - run: python manage test
     
