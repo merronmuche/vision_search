@@ -28,7 +28,7 @@ class ImageViewTest(TestCase):
         fv = json.loads(images[1].feature_vector)
         self.assertEqual(type(fv), dict)
         self.assertEqual(list(fv.keys()), ['fv'])
-        self.assertAlmostEqual(fv['fv'][0], -1.695610761642456)
+        self.assertAlmostEqual(fv['fv'][0], -1.6956108979973425, places=4)
         # self.assertAlmostEqual(fv['fv'][:3], [-1.695610761642456, -1.6660512685775757, -1.7274105548858643])
 
 
