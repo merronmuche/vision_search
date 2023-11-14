@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          python model_extraction.py
           pip install -r requirements.txt
+          python model_extraction.py
           python manage.py test
     
