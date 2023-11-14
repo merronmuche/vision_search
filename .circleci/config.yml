@@ -4,7 +4,7 @@ jobs:
   build:
     docker:
       - image: circleci/python:3.9.0
-    working_directory: ~/repo
+    working_directory: ~/vision_search
     steps:
       - checkout
       - run: pip install -r requirements.txt
