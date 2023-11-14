@@ -15,7 +15,7 @@ from app import models
 
 
 def create_feature_vector(request):
-
+    '''Create a feature vector for all the images in the database table Image.'''
     all_images = models.Image.objects.filter(feature_vector__isnull=True)
     for image in all_images:
         path = image.image.path
