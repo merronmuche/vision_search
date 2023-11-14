@@ -7,7 +7,7 @@ from django.test import TestCase
 
 from app.models import Image
 
-class ImageModelTest(TestCase):
+class ImageViewTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         # Set up non-modified objects used by all test methods
@@ -15,7 +15,7 @@ class ImageModelTest(TestCase):
 
     def test_create_feature_vector(self):
         im = Image.objects.get(id=1)
-        pass
+        
     
     
 
