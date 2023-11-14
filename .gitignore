@@ -2,7 +2,7 @@
 
 # Mine 
 model.pt
-
+try.py
 ### Django ###
 *.log
 *.pot
