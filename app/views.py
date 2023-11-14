@@ -13,6 +13,7 @@ import numpy as np
 import pickle
 from app import models
 
+
 def create_feature_vector(request):
 
     all_images = models.Image.objects.filter(feature_vector__isnull=True)
@@ -27,6 +28,8 @@ def create_feature_vector(request):
         image.save()
 
     return HttpResponse('Successfully created feature vector!')
+
+
 def index(request):
     images = models.Image.objects.all().order_by('-image')[:3]
 
@@ -34,6 +37,8 @@ def index(request):
                   {
                     'images' : images
                   })
+
+
 def list_images(request):
     all_images = models.Image.objects.all().order_by('-image')
     return render(request, 'app/all.html',
