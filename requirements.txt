@@ -1,5 +1,6 @@
 Django==4.2.7
-torch -f https://download.pytorch.org/whl/cpu/torch_stable.html
-torchvision -f https://download.pytorch.org/whl/cpu/torch_stable.html
+torch==2.1.0
+torchvision==0.16.0
 scikit-learn==1.3.2
 Pillow==10.1.0
+
