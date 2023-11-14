@@ -7,8 +7,9 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - run: echo 'working directory is, '
-      - run: pwd
-      - run: pip install -r requirements.txt
-      - run: python manage test
+      - run: |
+          echo 'working directory is, '
+          pwd
+          pip install -r requirements.txt
+          python manage.py test
     
