@@ -8,8 +8,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          echo 'working directory is, '
-          pwd
+          python model_extraction.py
           pip install -r requirements.txt
           python manage.py test
     
