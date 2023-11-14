@@ -4,7 +4,7 @@
 
 from django.core.files import File
 from django.test import TestCase
-
+import json
 from app.models import Image
 from app.views import create_feature_vector
 
@@ -25,6 +25,10 @@ class ImageViewTest(TestCase):
 
         create_feature_vector(request)
         self.assertNotEqual(images[0].feature_vector, None)
+        fv = json.loads(images[1].feature_vector)
+        self.assertEqual(type(fv), dict)
+        self.assertEqual(list(fv.keys()), ['fv'])
+        self.assertEqual(fv['fv'][:3], [-1.695610761642456, -1.6660512685775757, -1.7274105548858643])
 
 
 

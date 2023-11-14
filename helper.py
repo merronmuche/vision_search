@@ -6,6 +6,7 @@ from torchvision import transforms
 
 def get_feature_vector(path):
 
+    torch.manual_seed(0)
     # Load the pretrained model from pytorch
     my_model = torch.load('model.pt')
     for param in my_model.parameters():
