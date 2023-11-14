@@ -7,7 +7,7 @@ urlpatterns = [
    path('create/', create_feature_vector, name='create'),
    path('index/', index, name='index'),
    path("images/", list_images, name='images'),
-   path('get/<int:id>', image_detail, name='detail_image'),
+   path('images/<int:id>/', image_detail, name='image-detail'),
    path('search/', search_images, name='search_images'),
 ]
 
